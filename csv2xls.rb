@@ -8,7 +8,9 @@ class Csv2xls < Formula
   depends_on "libcsv"
 
   def install
-    system "./configure", "--disable-debug"
+    ENV.append_to_cflags "-I#{Formula["xlslib"].include}/xlslib"
+
+    system "./configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
