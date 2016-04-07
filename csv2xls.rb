@@ -14,6 +14,6 @@ class Csv2xls < Formula
   end
 
   test do
-    system "#{bin}/csv2xls", "--version"
+    system "#{bin}/csv2xls", "-v"
   end
 end
